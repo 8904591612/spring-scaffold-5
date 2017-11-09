@@ -19,7 +19,7 @@ public abstract class ReadTemplateFile extends AbstractGenerate {
 			outPutFile(newStrings, nameClass);
 			return true;
 		}else{
-			System.out.print("namah shivaya");
+			
 		}
 		return false;
 	}

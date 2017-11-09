@@ -1,0 +1,51 @@
+var endlessScrollingIndex=0;
+$(document).ready(function(){
+//$('#scrollablePanel').bind('scroll',chk_scroll);
+	load_data();
+	$('#scrollablePanel').on('scroll', function(){
+		
+		if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+		
+			load_data();
+		}
+		
+		
+	});
+	
+});
+
+
+
+
+
+function load_data(){
+	endlessScrollingIndex=endlessScrollingIndex+10;
+	$.ajax({
+		type: "GET",
+		url:  "/rest/${paramClassName}/index",
+		data: {"endlessScrollingIndex": endlessScrollingIndex},
+		success:function(data){
+			
+			for(i=0; i<data.length; i++){
+			$("tbody").append("<tr>${td_attributes}</tr>");
+
+			
+			}
+			
+			
+		}
+
+		
+		
+	});
+	
+	
+}
+
+
+
+
+
+
+
+

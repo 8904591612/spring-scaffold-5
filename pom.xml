@@ -10,9 +10,9 @@
 	<description>Spring generate api scaffold kotlin</description>
 	<url>https://projects.spring.io/spring-cloud/</url>
 	<scm>
-		<url>https://github.com/NetoDevel/spring-boot-scaffold-kotlin/tree/master/spring-scaffold-cli</url>
-		<connection>scm:git:git://github.com/NetoDevel/spring-boot-scaffold-kotlin/tree/master/spring-scaffold-cli.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/NetoDevel/spring-boot-scaffold-kotlin/tree/master/spring-scaffold-cli.git</developerConnection>
+		<url>https://github.com/8904591612/spring-scaffold-5</url>
+		<connection>scm:git:git://github.com/8904591612/spring-scaffold-5.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/8904591612/spring-scaffold-5.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<modules>

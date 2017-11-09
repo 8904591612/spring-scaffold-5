@@ -31,7 +31,7 @@
 	<repositories>
 		<repository>
 			<id>my-local-repo</id>
-			<url>https://github.com/NetoDevel/cli-spring-boot-scaffold/tree/master/spring-boot-generate</url>
+			<url>https://github.com/8904591612/spring-scaffold-5/tree/master/spring-boot-generate</url>
 		</repository>
 	</repositories>
 
