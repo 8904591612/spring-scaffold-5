@@ -29,8 +29,9 @@ public  class ScriptGenerator extends AbstractThymeleafGenerate {
 		String tdAttributes = generateScriptparameters(nameClass, parameterClass);
 		scriptString = scriptString.replace("paramClassName", paramClassName);
 		scriptString= scriptString.replace("${td_attributes}", tdAttributes);
-		File newScriptFile = new File(getUserDir() + "/src/main/webapp/page_js/" + paramClassName+".js");
+		File newScriptFile = new File(getUserDir() + "/src/main/webapp/page_js" + paramClassName+".js");
 		FileUtils.writeStringToFile(newScriptFile, scriptString);
+		System.out.println("created /src/main/webapp/page_js" + nameClass.toLowerCase() + ".js");
 
 
 
