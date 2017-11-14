@@ -1,6 +1,10 @@
 package br.com.generate.java.command.script;
 
+import java.io.File;
 import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 import br.com.generate.Layers;
 import br.com.generate.ReadTemplateFile;
@@ -8,9 +12,29 @@ import br.com.generate.thymeleaf.AbstractThymeleafGenerate;
 
 public  class ScriptGenerator extends AbstractThymeleafGenerate {
 
-	
-	
-	
-	
+	public ScriptGenerator(String nameClass, String parametersClass)  throws IOException{
+		
+		generatescript(nameClass, parametersClass);
 
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public void generatescript(String nameClass , String parameterClass) throws IOException{
+		String scriptString = IOUtils.toString(getClass().getResourceAsStream("/templates/template-script.txt"), null);
+
+		String classNameParam = nameClass;
+		String paramClassName = nameClass.toLowerCase();
+		String pathUrl = "/" + nameClass.toLowerCase() + "s";
+		String tdAttributes = generateScriptparameters(nameClass, parameterClass);
+		scriptString = scriptString.replace("paramClassName", paramClassName);
+		scriptString= scriptString.replace("${td_attributes}", tdAttributes);
+		File newScriptFile = new File(getUserDir() + "/src/main/webapp/page_js/" + paramClassName+".js");
+		FileUtils.writeStringToFile(newScriptFile, scriptString);
+
+
+
+}
+
+	
 }

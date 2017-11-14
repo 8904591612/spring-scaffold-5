@@ -57,7 +57,7 @@ public class ScaffoldHandler extends OptionHandler {
 				new ServiceGenerator().generate(nameClass, null, "template-service.txt");
 				new ControllerGenerator().generate(nameClass, null, "template-controller.txt");
 				new RestGenerator().generate(nameClass, null, "template-rest-controller.txt");
-                
+                new ScriptGenerator(nameClass, parametersClass);
 				new ThymeleafGenerator(nameClass, parametersClass);
 				new Migrations().create(nameClass, parametersClass);
 			}
