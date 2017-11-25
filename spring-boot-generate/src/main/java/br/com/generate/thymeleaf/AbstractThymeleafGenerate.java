@@ -78,7 +78,7 @@ public abstract class AbstractThymeleafGenerate extends ReadScaffoldInfo {
 		String tdParameters = "";
 		for (int i = 0; i < params.length; i++) {
 			String [] nameAndType = params[i].split(":");
-			tdParameters +=  "data[i]."+ nameAndType[0] +"+";
+			tdParameters += "\"<td>\""+ "data[i]."+ nameAndType[0] +"+"+"\"</td>\"";
 			
 		}
 		
