@@ -27,7 +27,7 @@ function load_data(){
 		success:function(data){
 			
 			for(i=0; i<data.length; i++){
-			$("tbody").append("<tr>${td_attributes}</tr>");
+			$("tbody").append(${td_attributes});
 
 			
 			}
