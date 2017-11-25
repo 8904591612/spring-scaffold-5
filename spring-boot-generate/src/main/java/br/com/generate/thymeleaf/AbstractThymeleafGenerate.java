@@ -82,6 +82,6 @@ public abstract class AbstractThymeleafGenerate extends ReadScaffoldInfo {
 			
 		}
 		
-		return "\"<tr>\""+tdParameters+"\"</tr>\"";
+		return "\"<tr>\""+"+"+tdParameters+"\"</tr>\"";
 	}
 }
