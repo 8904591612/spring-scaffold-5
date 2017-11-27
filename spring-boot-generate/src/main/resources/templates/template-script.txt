@@ -22,7 +22,7 @@ function load_data(){
 	endlessScrollingIndex=endlessScrollingIndex+10;
 	$.ajax({
 		type: "GET",
-		url:  "/rest/${paramClassName}/index",
+		url:  "/rest/paramClassName/index",
 		data: {"endlessScrollingIndex": endlessScrollingIndex},
 		success:function(data){
 			

@@ -12,9 +12,10 @@ public class ThymeleafGenerator extends AbstractThymeleafGenerate {
 		if (validateLayoutHtml()) {
 			generateTemplateLayout();
 		}
-		generateIndexHtml(className, parameters);
+	//	generateIndexHtml(className, parameters);
 		generateFormHtml(className, parameters);
 		generateShowHtml(className, parameters);
+		generatePanelIndexHtml(className, parameters);
 	}
 
 	public void generateTemplateLayout() throws IOException {
@@ -46,6 +47,23 @@ public class ThymeleafGenerator extends AbstractThymeleafGenerate {
 		
 		FileUtils.writeStringToFile(newHtmlFile, htmlString);
 		System.out.println("create /src/main/resources/templates/" + className.toLowerCase() + "/index.html");
+	}
+	public void generatePanelIndexHtml(String className, String parameters) throws IOException{
+		
+		String htmlString = IOUtils.toString(getClass().getResourceAsStream("/templates/template-endless-index.html"), null);
+		String classNameParam = className;
+		String paramClassName = className.toLowerCase();
+		String pathUrl = "/" + className.toLowerCase() + "s";
+		String thAttributes = generateThParameters(parameters);
+		String template = "layout";
+		htmlString = htmlString.replace("${template}", template);
+	//	htmlString = htmlString.replace("${className}", classNameParam);
+		htmlString = htmlString.replace("paramClassName", paramClassName);
+		File newHtmlFile = new File(getUserDir() + "/src/main/resources/templates/" + className.toLowerCase() + "/index.html");
+		FileUtils.writeStringToFile(newHtmlFile, htmlString);
+		System.out.println("create /src/main/resources/templates/" + className.toLowerCase() + "/index.html");
+
+
 	}
 
 	public void generateFormHtml(String className, String parameters) throws IOException {
@@ -96,6 +114,7 @@ public class ThymeleafGenerator extends AbstractThymeleafGenerate {
 		} 
 		return true;
 	}
+	
 	
 	public static void main(String[] args) throws IOException {
 		new ThymeleafGenerator("User", "name:String email:String");

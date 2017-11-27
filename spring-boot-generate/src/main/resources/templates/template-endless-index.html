@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout :decorator="${template}">
+<head>
+ 	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+      <script src="/page_js/paramClassName"></script> 
+    
+</head>
+<body>
+
+	<div layout:fragment="content">
+		<div id="scrollPanel1" style=" height: 300px;">
+			<div class="panel panel-default" id="scrollPanel"  >
+  				<div class="panel-heading">Panel Heading</div>
+  					<div class="panel-body" >
+  							<div id="scrollablePanel" style="overflow-y: scroll; height: 300px;">
+  						<div class="table-responsive">
+  							<table class="table" id="scrollTable">
+  								<thead>
+									<tr>
+									${th_attributes}
+										
+									</tr>
+								</thead>
+								<tbody>
+								
+								
+								</tbody>
+    
+  							</table>
+						</div>
+  					</div>
+  			   	</div>
+		</div>
+		</div>
+		
+	
+	
+		
+	</div>
+	
+	
+	
+
+
+</body>
+</html>
