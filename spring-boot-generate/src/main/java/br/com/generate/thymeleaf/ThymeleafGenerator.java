@@ -59,6 +59,8 @@ public class ThymeleafGenerator extends AbstractThymeleafGenerate {
 		htmlString = htmlString.replace("${template}", template);
 	//	htmlString = htmlString.replace("${className}", classNameParam);
 		htmlString = htmlString.replace("paramClassName", paramClassName);
+		htmlString = htmlString.replace("${th_attributes}", thAttributes);
+
 		File newHtmlFile = new File(getUserDir() + "/src/main/resources/templates/" + className.toLowerCase() + "/index.html");
 		FileUtils.writeStringToFile(newHtmlFile, htmlString);
 		System.out.println("create /src/main/resources/templates/" + className.toLowerCase() + "/index.html");
