@@ -18,6 +18,7 @@ import br.com.netodevel.command.service.ServiceCommand;
 import br.com.netodevel.command.service.ServiceHandler;
 import br.com.netodevel.command.setup.SetupScaffoldCommand;
 import br.com.netodevel.command.setup.SetupScaffoldHandler;
+import br.com.netodevel.scaffold.InfiniteScrollCommand;
 import br.com.netodevel.scaffold.ScaffoldCommand;
 import br.com.netodevel.scaffold.ScaffoldHandler;
 
@@ -36,7 +37,9 @@ public class ScaffoldFactoryCommands implements CommandFactory {
 			new ControllerCommand("controller", "generate controllers", new ControllerHandler()),
 			new ScaffoldCommand("scaffold", "generate api scaffold", new ScaffoldHandler()),
 			new DBCreateCommand("db:create", "create database", new DBCreateHandler()),
-			new SetupScaffoldCommand("setup:scaffold", "setup scaffold", new SetupScaffoldHandler()));
+			new SetupScaffoldCommand("setup:scaffold", "setup scaffold", new SetupScaffoldHandler()),
+	
+	        new InfiniteScrollCommand("infinitescroll", "generate api infinitescroll", new ScaffoldHandler()));
 	}
 
 }
