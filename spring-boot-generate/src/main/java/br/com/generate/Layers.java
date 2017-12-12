@@ -9,5 +9,5 @@ public final class Layers {
 	public static final String THYMELEAF = "thymeleaf";
 	public static final String REST		 ="rest";
 	public static final String SCRIPT    = "script";
-	
+	public static final String CLIENTPAGINATION="client";
 }
