@@ -26,6 +26,6 @@ public class ClientPagination extends ReadTemplateFile{
 	
 	}
 	public static void main(String[] args) throws IOException {
-		new ClientPagination().generate("User", null, "template-rest-controller.txt");
+		new ClientPagination().generate("User", null, "template-client-pagnation-rest-controller.txt");
 	}
 }
