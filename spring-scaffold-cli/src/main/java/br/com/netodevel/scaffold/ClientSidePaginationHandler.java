@@ -18,6 +18,7 @@ import br.com.generate.java.command.script.ClientPaginationScriptGenerator;
 import br.com.generate.java.command.script.ScriptGenerator;
 import br.com.generate.java.command.service.ServiceGenerator;
 import br.com.generate.migrate.Migrations;
+import br.com.generate.thymeleaf.ClientPaginationThemeGenerator;
 import br.com.generate.thymeleaf.ThymeleafGenerator;
 
 public class ClientSidePaginationHandler extends OptionHandler {
@@ -58,7 +59,8 @@ public class ClientSidePaginationHandler extends OptionHandler {
 				new ControllerGenerator().generate(nameClass, null, "template-controller.txt");
 				new ClientPagination().generate(nameClass, null, "template-client-pagination-rest-controller.txt");
                 new ClientPaginationScriptGenerator(nameClass, parametersClass);
-				new ThymeleafGenerator(nameClass, parametersClass);
+				//new ThymeleafGenerator(nameClass, parametersClass);
+                new ClientPaginationThemeGenerator(nameClass, parametersClass);
 				new Migrations().create(nameClass, parametersClass);
 			}
 		} catch (Exception e) {

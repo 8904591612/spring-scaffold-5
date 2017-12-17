@@ -16,7 +16,7 @@ public class ClientPaginationThemeGenerator extends AbstractThymeleafGenerate {
 	//	generateIndexHtml(className, parameters);
 	//	generateFormHtml(className, parameters);
 	//	generateShowHtml(className, parameters);
-	//	generatePanelIndexHtml(className, parameters);
+		generatePanelIndexHtml(className, parameters);
 	}
 	
 public void generatePanelIndexHtml(String className, String parameters) throws IOException{
