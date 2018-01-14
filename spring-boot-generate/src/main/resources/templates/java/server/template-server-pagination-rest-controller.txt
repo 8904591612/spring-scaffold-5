@@ -1,0 +1,38 @@
+package ${package};
+import ${package_model}.${className};
+import ${package_repository}.${className}Repository;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class ${className}RestController {
+	
+	
+	@Autowired
+	private ${className}Repository ${paramClassName}Repository;
+	
+	@RequestMapping(value="/rest/${paramClassName}",method = RequestMethod.GET)
+	public HashMap<String,Object> getData(@RequestParam(value="draw",required=true)int draw,@RequestParam(value="start",required=true)int start,@RequestParam(value="length",required=true)int length){
+		
+		int to=start+length;
+		
+		int recordsTotal = ${paramClassName}Repository.findAll().size();
+		ArrayList<${className}> data=(ArrayList<${className}>) ${paramClassName}Repository.findAll().subList(start, to);
+	
+		HashMap<String,Object> paginated_data=new HashMap<String,Object>();
+		paginated_data.set("draw",draw);
+		paginated_data.set("recordsTotal",recordsTotal);
+		paginated_data.set("recordsFiltered",recordsTotal);
+		paginated_data.set("data",data);
+		return paginated_data;
+		
+	}
+
+}
