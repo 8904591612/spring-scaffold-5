@@ -22,7 +22,7 @@ public class ${className}RestController {
 	public List<${className}> getData(){
 		
 		
-		List<${className}> all = ${paramClassName}Repository.findAll().subList(endlessScrollingIndex, to);
+		List<${className}> all = ${paramClassName}Repository.findAll();
 		
 		
 		return all;

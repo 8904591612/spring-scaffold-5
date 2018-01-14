@@ -84,4 +84,20 @@ public abstract class AbstractThymeleafGenerate extends ReadScaffoldInfo {
 		
 		return "\"<tr>\""+"+"+tdParameters+"\"</tr>\"";
 	}
+
+	public String generateServerScriptParameters(String className, String parameters){
+		String [] params = parameters.split(" ");
+		String tdParameters = "";
+		for (int i = 0; i < params.length; i++) {
+			String [] nameAndType = params[i].split(":");
+			//tdParameters += "\"<td>\""+ "+"+"data[i]."+ nameAndType[0] +"+"+"\"</td>\""+"+";
+			tdParameters +="{\"data\":\"nameAndType[0]\",\"targets\": '"+i+"'}"+",";
+			
+		}
+		
+		return tdParameters;
+		
+		
+	}
+
 }

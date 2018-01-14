@@ -23,6 +23,8 @@ import br.com.netodevel.scaffold.ClientSidePaginationHandler;
 import br.com.netodevel.scaffold.InfiniteScrollCommand;
 import br.com.netodevel.scaffold.ScaffoldCommand;
 import br.com.netodevel.scaffold.ScaffoldHandler;
+import br.com.netodevel.scaffold.ServerSidePaginationCommand;
+import br.com.netodevel.scaffold.ServerSidePaginationHandler;
 
 /**
  * all commands scaffold
@@ -43,7 +45,8 @@ public class ScaffoldFactoryCommands implements CommandFactory {
 	
 	        new InfiniteScrollCommand("infinitescroll", "generate api infinitescroll", new ScaffoldHandler()),
 			
-			new ClientSidePaginationCommand("clientsidepagination","generate api client side",new ClientSidePaginationHandler()));
+			new ClientSidePaginationCommand("clientsidepagination","generate api client side",new ClientSidePaginationHandler()),
+	        new ServerSidePaginationCommand("serversidepagination","generate api server side",new ServerSidePaginationHandler()));
 	}
 
 }
