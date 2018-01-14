@@ -15,6 +15,7 @@ import br.com.generate.java.command.controller.ControllerGenerator;
 import br.com.generate.java.command.model.ModelGenerator;
 import br.com.generate.java.command.repository.RepositoryGenerator;
 import br.com.generate.java.command.rest.ClientPagination;
+import br.com.generate.java.command.rest.ServerPagination;
 import br.com.generate.java.command.script.ClientPaginationScriptGenerator;
 import br.com.generate.java.command.script.ServerPaginationScriptGenerator;
 import br.com.generate.java.command.service.ServiceGenerator;
@@ -55,6 +56,7 @@ public class ServerSidePaginationHandler extends OptionHandler {
 				new RepositoryGenerator().generate(nameClass, null, "template-repository.txt");
 				new ServiceGenerator().generate(nameClass, null, "template-service.txt");
 				new ControllerGenerator().generate(nameClass, null, "template-controller.txt");
+				new ServerPagination().generate(nameClass, null, "template-server-pagination-rest-controller.txt");
 				new ServerPaginationScriptGenerator(nameClass, parametersClass);
 				new ServerPaginationThemeGenerator(nameClass, parametersClass);
 				new Migrations().create(nameClass, parametersClass);
