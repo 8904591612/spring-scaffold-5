@@ -27,10 +27,10 @@ public class ${className}RestController {
 		ArrayList<${className}> data=(ArrayList<${className}>) ${paramClassName}Repository.findAll().subList(start, to);
 	
 		HashMap<String,Object> paginated_data=new HashMap<String,Object>();
-		paginated_data.set("draw",draw);
-		paginated_data.set("recordsTotal",recordsTotal);
-		paginated_data.set("recordsFiltered",recordsTotal);
-		paginated_data.set("data",data);
+		paginated_data.put("draw",draw);
+		paginated_data.put("recordsTotal",recordsTotal);
+		paginated_data.put("recordsFiltered",recordsTotal);
+		paginated_data.put("data",data);
 		return paginated_data;
 		
 	}
